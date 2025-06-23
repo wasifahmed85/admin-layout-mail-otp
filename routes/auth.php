@@ -17,6 +17,7 @@ use App\Http\Controllers\Backend\Admin\Auth\ConfirmablePasswordController as Adm
 use App\Http\Controllers\Backend\Admin\Auth\EmailVerificationNotificationController as AdminEmailVerificationNotificationController;
 use App\Http\Controllers\Backend\Admin\Auth\EmailVerificationPromptController as AdminEmailVerificationPromptController;
 use App\Http\Controllers\Backend\Admin\Auth\NewPasswordController as AdminNewPasswordController;
+use App\Http\Controllers\Backend\Admin\Auth\OtpVerificationController as AdminOtpVerificationController;
 use App\Http\Controllers\Backend\Admin\Auth\PasswordController as AdminPasswordController;
 use App\Http\Controllers\Backend\Admin\Auth\PasswordResetLinkController as AdminPasswordResetLinkController;
 use App\Http\Controllers\Backend\Admin\Auth\VerifyEmailController as AdminVerifyEmailController;
@@ -78,7 +79,11 @@ Route::middleware('auth')->group(function () {
 // Admin Auth Rotues
 Route::group(['as' => 'admin.', 'prefix' => 'admin'], function () {
 
-
+  Route::controller(AdminOtpVerificationController::class)->group(function () {
+        Route::get('/otp-verification', 'otp')->name('otp-verification');
+        Route::post('/verify-otp', 'verify')->name('verify-otp');
+        Route::post('/otp-resend', 'resend')->name('otp-resend')->middleware('throttle:6,1');
+    });
     // Route::middleware('guest:admin')->group(function () {
     Route::get('login', [AdminAuthenticatedSessionController::class, 'create'])
         ->name('login');

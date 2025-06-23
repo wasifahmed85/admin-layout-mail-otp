@@ -50,10 +50,11 @@ class Admin extends AuthBaseModel
     protected function casts(): array
     {
         return [
-            'email_otp_expires_at' => 'datetime',
-            'last_otp_sent_at' => 'datetime',
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'email_otp_expires_at' => 'datetime',
+            'last_otp_sent_at' => 'datetime',
+            'email_otp' => 'integer',
         ];
     }
 }
