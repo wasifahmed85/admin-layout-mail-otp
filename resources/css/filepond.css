@@ -1,0 +1,10 @@
+.dark .filepond--drop-label {
+    background: #000;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.dark .filepond--drip {
+    background: #000;
+    opacity: .7;
+}

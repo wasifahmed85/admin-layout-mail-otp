@@ -1,0 +1,84 @@
+/*=============================================================
+                Datatable CSS
+ =============================================================*/
+
+.dt-container :is([type=text], input:where(:not([type])), [type=email], [type=url], [type=password], [type=number], [type=date], [type=datetime-local], [type=month], [type=search], [type=tel], [type=time], [type=week], [multiple], textarea, select):focus {
+    outline-offset: 0px !important;
+    --tw-ring-inset: none;
+}
+
+.dataTable .action-btn,
+.dataTable .reorder {
+    transition: .4s;
+}
+
+.dataTable th:last-child {
+    text-align: center;
+}
+
+.dataTable .action-btn:hover {
+    transform: rotate(90deg);
+}
+
+.dataTable .action-btn:hover i{
+    color: var(--color-text-active) !important;
+}
+
+.dataTable .reorder:hover {
+    transform: scale(1.1);
+    color: var(--primary-50) !important;
+}
+
+.dt-container .dt-buttons {
+    display: inline-block !important;
+}
+
+.dt-container .dt-button {
+    border-radius: 5px !important;
+}
+
+.dt-container .dt-search {
+    float: right !important;
+}
+
+.dt-container .dt-info {
+    margin-top: 20px;
+    display: inline-block;
+    color: black !important;
+}
+
+html.dark .dt-container .dt-info {
+    color: white !important;
+}
+
+.dt-container .dt-paging {
+    margin-top: 10px;
+    float: right;
+}
+
+div.dt-container .dt-paging .dt-paging-button {
+    border-radius: 100% !important;
+    background: (rgba(230, 230, 230, 0.1), rgba(0, 0, 0, 0.1));
+}
+
+
+div.dt-container .dt-paging .dt-paging-button:hover {
+    background: linear-gradient(#9999991a, #0000001a) !important;
+    border: 1px solid #0000004d !important;
+    color: #000000 !important;
+}
+
+html.dark .dt-container .dt-paging .dt-paging-button:hover,
+html.dark .dt-container .dt-paging .dt-paging-button.current {
+    background: #353535;
+    border: 1px solid #353535;
+    color: white !important;
+}
+
+.dt-container .dt-column-title {
+    color: black !important;
+}
+
+html.dark .dt-container .dt-column-title {
+    color: white !important;
+}

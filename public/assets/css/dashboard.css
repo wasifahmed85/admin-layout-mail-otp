@@ -1,0 +1,35 @@
+@import url('./datatable.css');
+
+/*=============================================================
+                CK Editor 5 CSS
+ =============================================================*/
+.ck.ck-editor__top .ck-sticky-panel .ck-sticky-panel__content .ck-toolbar {
+    background: transparent;
+}
+
+/* .ck.ck-editor__editable.ck-focused:not(.ck-editor__nested-editable) {
+    min-height: 200px !important;
+} */
+.ck.ck-editor__main>.ck-editor__editable {
+    min-height: 200px;
+    background-color: transparent !important;
+}
+
+/*=============================================================
+                Select2 CSS
+ =============================================================*/
+.select2-container--default .select2-selection--single {
+    background-color: transparent !important;
+}
+
+.select2-container .select2-selection--single {
+    height: 40px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 40px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 40px !important;
+}
