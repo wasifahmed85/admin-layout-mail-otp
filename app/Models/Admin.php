@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 
 class Admin extends AuthBaseModel
 {
-        use HasFactory, Notifiable;
+    use HasFactory, Notifiable;
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new AdminResetPasswordNotification($token));
@@ -50,6 +50,8 @@ class Admin extends AuthBaseModel
     protected function casts(): array
     {
         return [
+            'email_otp_expires_at' => 'datetime',
+            'last_otp_sent_at' => 'datetime',
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];

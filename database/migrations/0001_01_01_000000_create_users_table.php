@@ -24,7 +24,16 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->tinyInteger('status')->default(AuthBaseModel::STATUS_ACTIVE);
+
+
+              // For Eamil OTP Verification
+            $table->string('email_otp', 6)->nullable();
+            $table->timestamp('email_otp_expires_at')->nullable();
+            $table->timestamp('last_otp_sent_at')->nullable();
+
             $table->string('password');
+            
+            $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

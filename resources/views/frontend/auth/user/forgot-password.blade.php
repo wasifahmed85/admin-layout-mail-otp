@@ -1,4 +1,11 @@
 <x-guest-layout>
+
+     <a href="{{ url('/') }}"
+                class="flex items-center justify-center absolute -top-15 left-0   py-3 rounded-md animate-scalePulse text-gray-700 gap-2">
+                <i data-lucide="arrow-left"></i>
+                <span>Back To Home</span>
+            </a>
+            <p>{{('user')}}</p>
     <div class="mb-4 text-sm text-gray-600">
         {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
     </div>

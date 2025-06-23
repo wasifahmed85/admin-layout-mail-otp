@@ -7,7 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 class User extends AuthBaseModel implements MustVerifyEmail
 {
-   
+
 
     /**
      * The attributes that are mass assignable.
@@ -15,9 +15,24 @@ class User extends AuthBaseModel implements MustVerifyEmail
      * @var list<string>
      */
     protected $fillable = [
+        'sort_order',
         'name',
+        'username',
         'email',
+        'status',
         'password',
+        'email_verified_at',
+        'email_otp',
+        'email_otp_expires_at',
+        'last_otp_sent_at',
+        'image',
+
+        'creater_id',
+        'creater_type',
+        'updater_id',
+        'updater_type',
+        'deleter_id',
+        'deleter_type',
     ];
 
     /**
@@ -40,6 +55,9 @@ class User extends AuthBaseModel implements MustVerifyEmail
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'email_otp_expires_at' => 'datetime',
+            'last_otp_sent_at' => 'datetime',
+            'email_otp' => 'integer',
         ];
     }
 }
